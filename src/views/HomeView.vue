@@ -10,7 +10,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import SwimmingStyleCard from '@/components/SwimmingStyleCard.vue'
-import axios from 'axios'
+import SwimmingStyleService from '@/Services/SwimmingStyleService'
+
 // import freeStyle from '../assets/img/Freestyle_Stroke.png'
 // import backstroke from '../assets/img/backstroke.png'
 // import breaststroke from '../assets/img/breaststroke.png'
@@ -20,8 +21,7 @@ const styles = ref([])
 // const styles = reactive({ values: [] })
 
 const getSwimmingStyles = async () => {
-  await axios
-    .get('https://my-json-server.typicode.com/OusseynouMbaye/swimming-style/styles')
+  SwimmingStyleService.getAllSwimmingStyles()
     .then((response) => {
       // console.log(response.data)
       styles.value = response.data
