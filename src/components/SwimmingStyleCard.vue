@@ -1,11 +1,13 @@
 <template>
-  <div class="swimming-style-card">
-    <!-- <img :src="style.image" :alt="style.name" /> -->
-    <h2>{{ style.name }}</h2>
-    <div v-for="(stat, index) in style.stats" :key="stat.id">
-      <span class="stat_index">{{ index }}</span> {{ stat }}
+  <RouterLink :to="{ name: 'swimming-style-details', params: { id: style.id } }">
+    <div class="swimming-style-card">
+      <!-- <img :src="style.image" :alt="style.name" /> -->
+      <h2>{{ style.name }}</h2>
+      <div v-for="(stat, index) in style.stats" :key="stat.id">
+        <span class="stat_index">{{ index }}</span> {{ stat }}
+      </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>
@@ -38,5 +40,8 @@ defineProps({
 }
 .stat_index {
   font-weight: bold;
+}
+.stat_index::first-letter {
+  text-transform: capitalize;
 }
 </style>
