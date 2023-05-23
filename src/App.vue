@@ -2,6 +2,7 @@
   <header>
     <nav class="app">
       <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/counter">Counter</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
   </header>
@@ -18,19 +19,19 @@ import { RouterLink, RouterView } from 'vue-router'
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: #1b1e3df2; /* #f1f1f1; */
   padding: 10px;
   border-radius: 5px;
   margin: 10px;
 }
 .app a {
   text-decoration: none;
-  color: #01b2f8;
+  color: #d4dcff;
 }
 .app a:hover {
-  color: #fff;
-  background-color: #557adf;
-  border-radius: 5px;
+  color: #5396e7;
+  /* background-color: #5396e7; */
+  /* border-radius: 5px; */
   opacity: 0.8;
 }
 </style>

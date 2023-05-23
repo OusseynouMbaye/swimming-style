@@ -31,6 +31,14 @@ defineProps({
   align-items: center;
   flex-direction: column;
 }
+.swimming-style-card:hover {
+  background-color: rgb(11, 180, 34);
+  color: white;
+  cursor: pointer;
+  /*  zoom in out */
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
 
 .swimming-style-card img {
   width: 100%;
