@@ -5,11 +5,14 @@
       <input v-if="data.title" v-model="data.title" type="text" />
     </div>
     <div>{{ dataTitle }}</div>
+    <textarea v-autofocus />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import { vAutofocus } from '@/directives/vAutofocus'
+
 // const title = ref('This is an about page')
 
 // Non-reactive dataTitle

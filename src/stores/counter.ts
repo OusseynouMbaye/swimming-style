@@ -5,6 +5,10 @@ export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
   const doubleCount = computed(() => count.value * 2)
   const isOddOrEven = computed(() => (count.value % 2 === 0 ? 'even' : 'odd'))
+
+  /* 
+  Methods that mutate the store's state should be wrapped inside a `mutate` call.
+  */
   function incrementCount(e: MouseEvent) {
     // console.log(e)
     count.value++

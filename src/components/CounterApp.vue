@@ -2,27 +2,31 @@
   <div>
     <h1>Counter</h1>
     <div class="counterDiv">
+      <button @click="counterStore.decrementCount">-</button>
+      <p>{{ counterStore.count }}</p>
       <button @click="counterStore.incrementCount($event)">+</button>
       <button @click="counterStore.incrementCountPlus2(2, $event)">++</button>
-      <p>{{ counterStore.count }}</p>
-      <button @click="counterStore.decrementCount">-</button>
     </div>
     <p>
       The number {{ counterStore.count }} is {{ counterStore.isOddOrEven }} and her double is
       {{ counterStore.doubleCount }}
     </p>
+
+    <!-- <input v-model="title" type="text" /> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter'
+// hooks
 import { watch } from 'vue'
 
 const counterStore = useCounterStore()
+// const title = ref('Counter')
 
 watch(
   () => counterStore.count,
-  (newCount, oldCount) => {
+  (newCount) => {
     // console.log(`newCount: ${newCount}, oldCount: ${oldCount}`)
     if (newCount === 20) {
       alert('You have reached 20')
