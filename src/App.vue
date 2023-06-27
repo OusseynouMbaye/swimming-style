@@ -3,6 +3,7 @@
     <nav class="app">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/counter">Counter</RouterLink>
+      <RouterLink to="/posts">Posts</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
   </header>

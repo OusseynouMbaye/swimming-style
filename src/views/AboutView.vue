@@ -1,38 +1,23 @@
 <template>
-  <div class="about">
-    <h2>{{ data.title }}</h2>
-    <div>
-      <input v-if="data.title" v-model="data.title" type="text" />
-    </div>
+  <div>
+    <h3>About</h3>
     <div>{{ dataTitle }}</div>
-    <textarea v-autofocus />
+
+    <h2>{{ data.text }}</h2>
+    <div>
+      <input v-if="data.text" v-model="data.text" type="text" />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { vAutofocus } from '@/directives/vAutofocus'
-
-// const title = ref('This is an about page')
 
 // Non-reactive dataTitle
 const dataTitle: string = 'This is an Non reactive dataTitle'
+
 const data = reactive({
-  title: 'This is an about page',
+  text: 'This is an post page',
   description: 'This is a description'
 })
 </script>
-
-<style>
-.about {
-  /* border: 1px solid rgb(11, 180, 34); */
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  /* // center card */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-</style>
