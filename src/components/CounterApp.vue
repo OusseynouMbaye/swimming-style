@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Counter</h1>
+    <h1 ref="appTitleRef">{{ appTitle }}</h1>
     <div class="counterDiv">
       <button @click="counterStore.decrementCount">-</button>
       <p>{{ counterStore.count }}</p>
       <button @click="counterStore.incrementCount($event)">+</button>
-      <button @click="counterStore.incrementCountPlus2(2, $event)">++</button>
+      <button @click="counterStore.incrementCountPlus2Async(2, $event)">++</button>
     </div>
     <p>
       The number {{ counterStore.count }} is {{ counterStore.isOddOrEven }} and her double is
@@ -19,20 +19,28 @@
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter'
 // hooks
-import { watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+
+const appTitle = 'Counter App goooo'
+
+const appTitleRef = ref(null)
 
 const counterStore = useCounterStore()
-// const title = ref('Counter')
 
-watch(
-  () => counterStore.count,
-  (newCount) => {
-    // console.log(`newCount: ${newCount}, oldCount: ${oldCount}`)
-    if (newCount === 20) {
-      alert('You have reached 20')
+onMounted(() => {
+  // console.log(`appTitleRef: ${appTitleRef.value.offsetLeft} px wide!`)
+}),
+  // const title = ref('Counter')
+
+  watch(
+    () => counterStore.count,
+    (newCount) => {
+      // console.log(`newCount: ${newCount}, oldCount: ${oldCount}`)
+      if (newCount === 20) {
+        alert('You have reached 20')
+      }
     }
-  }
-)
+  )
 </script>
 
 <style scoped>
