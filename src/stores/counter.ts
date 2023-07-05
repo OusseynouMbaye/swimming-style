@@ -1,11 +1,8 @@
 import { computed, nextTick, ref } from 'vue'
-import { computed, nextTick, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
-  const title = ref('Counter')
-  const title = ref('Counter')
   const doubleCount = computed(() => count.value * 2)
   const isOddOrEven = computed(() => (count.value % 2 === 0 ? 'even' : 'odd'))
 
@@ -30,8 +27,6 @@ export const useCounterStore = defineStore('counter', () => {
     count.value += amount
     await nextTick()
     console.log('count', count.value)
-    await nextTick()
-    console.log('count', count.value)
   }
 
   function decrementCount() {
@@ -40,16 +35,6 @@ export const useCounterStore = defineStore('counter', () => {
   }
 
   return {
-    title,
-    count,
-    decrementCount,
-    incrementCount,
-    incrementCountPlus2Async,
-    doubleCount,
-    isOddOrEven
-  }
-  return {
-    title,
     count,
     decrementCount,
     incrementCount,
