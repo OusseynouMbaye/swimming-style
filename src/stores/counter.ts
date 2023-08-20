@@ -22,7 +22,7 @@ export const useCounterStore = defineStore('counter', () => {
   //   })
   // }
 
-  async function incrementCountPlus2Async(amount: number, e: MouseEvent) {
+  const incrementCountPlus2Async = async (amount: number, e: MouseEvent) => {
     // console.log(e)
     count.value += amount
     await nextTick()
