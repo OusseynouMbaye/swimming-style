@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import SwimmingStyleDetailsView from '@/components/SwimmingStyleDetails.vue'
-// import CounterView from '@/views/CounterView.vue'
+import PostsView from '@/views/PostsView.vue'
+import CounterView from '@/views/CounterView.vue'
+import AboutView from '../views/AboutView.vue'
+import ModalsView from '../views/ModalsView.vue'
+import PostDetailView from '@/views/PostDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,10 +18,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: AboutView
     },
     {
       path: '/swimming-styles/:id',
@@ -28,22 +29,22 @@ const router = createRouter({
     {
       path: '/counter',
       name: 'counter',
-      component: () => import('../views/CounterView.vue')
+      component: CounterView
     },
     {
       path: '/modals',
       name: 'modals',
-      component: () => import('../views/ModalsView.vue')
+      component: ModalsView //() => import('../views/ModalsView.vue')
     },
     {
       path: '/posts',
       name: 'posts',
-      component: () => import('../views/PostsView.vue')
+      component: PostsView
     },
     {
       path: '/postDetail/:id',
       name: 'postDetail',
-      component: () => import('../views/PostDetailView.vue')
+      component: PostDetailView //() => import('../views/PostDetailView.vue') not good for lazy loading
     }
   ]
 })
