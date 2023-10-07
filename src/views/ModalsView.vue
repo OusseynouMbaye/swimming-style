@@ -3,12 +3,9 @@
     <h2>Modals</h2>
     <button @click="showModal = true">Show modal</button>
     <Modal v-if="showModal">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex deleniti in nobis
-        doloremque inventore voluptates officiis expedita voluptatum est magni dolor molestias.
-        Neque quia quis eos nostrum ad. Eos?
-      </p></Modal
-    >
+      <template v-slot:title> This is a modal</template>
+      <slot />
+    </Modal>
   </div>
 </template>
 <script lang="ts" setup>
