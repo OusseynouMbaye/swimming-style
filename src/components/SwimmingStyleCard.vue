@@ -11,7 +11,16 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
+// defineProps({
+//   style: {
+//     type: Object,
+//     required: true
+//   }
+// })
+
+/* Props */
+
+const props = defineProps({
   style: {
     type: Object,
     required: true
