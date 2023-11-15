@@ -1,17 +1,31 @@
 <template>
   <teleport to=".modals-container">
-    <div class="modal">
+    <div class="modal" v-if="modelValue">
       <h3>{{ title }}</h3>
       <slot />
-      <button>Close modal</button>
+      <button @click="handleButtonClick">Close modal</button>
     </div>
   </teleport>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps({
-  title: String
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
+
+  title: {
+    type: String,
+    default: 'No title Specified'
+  }
 })
+
+const emit = defineEmits(['closeModal'])
+
+const handleButtonClick = () => {
+  emit('closeModal')
+}
 </script>
 
 <style scoped>
